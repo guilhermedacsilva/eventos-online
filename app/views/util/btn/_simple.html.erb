@@ -1,0 +1,8 @@
+<%= link_to url,
+    method: local_assigns[:http_method] ? http_method : :get,
+    class: "btn btn-default #{local_assigns[:css_class] ? css_class : ''}",
+    title: local_assigns[:title] ? title : '' do %>
+  <span class="glyphicon glyphicon-<%= local_assigns[:icon] ? icon : '' %>">
+    <%= local_assigns[:text] ? text : '' %>
+  </span>
+<% end %>

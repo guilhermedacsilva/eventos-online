@@ -1,0 +1,16 @@
+<% css_hash = {notice: 'success', info: 'info', warning: 'warning', error: 'danger'} %>
+<% [:notice, :info, :warning, :error].each do |type| %>
+  <% if flash[type] && !flash[type].empty? %>
+    <div class="alert alert-<%= css_hash[type] %>">
+      <ul class="padding-left-md">
+        <% if flash[type].is_a?(Array) %>
+          <% flash[type].each do |flash_message| %>
+            <li><%= raw flash_message %></li>
+          <% end %>
+        <% else %>
+          <li><%= raw flash[type] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
