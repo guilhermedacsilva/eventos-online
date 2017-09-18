@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  ended_at: "Ending date"
+  empty_records: "No records found"
+  events: "Events"
+  hello: "Hello %{name}."
+  logout: "Log out"
+  name: "Name"
+  started_at: "Starting date"
+  title: "Simple Event Manager"

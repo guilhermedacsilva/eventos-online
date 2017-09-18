@@ -1,1 +1,3 @@
-Sistema para emissão de certificados para eventos.
+Create the event, lectures and generate certificates.
+--------
+Sistema para emissão de certificados de eventos.

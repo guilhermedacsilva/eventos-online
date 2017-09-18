@@ -1,0 +1,36 @@
+<h1 class="page-header">
+  <%= t('events') %>
+  <%= render 'util/btn/new', text: 'Event', url: new_event_path %>
+</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th class="col-2-btns"></th>
+      <th><%= t('name') %></th>
+      <th><%= t('started_at') %></th>
+      <th><%= t('ended_at') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @events.empty? %>
+      <tr class="text-center">
+        <td colspan="99"><%= t('empty_records') %></td>
+      </tr>
+    <% else %>
+      <% @events.each do |event| %>
+        <tr>
+          <td>
+            <%= render 'util/btn/edit', url: edit_event_path(event) %>
+          </td>
+          <td><%= event.name %></td>
+          <td><%= event.started_at %></td>
+          <td><%= event.ended_at %></td>
+          <td>
+            <%= render 'util/btn/destroy', record: event %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
