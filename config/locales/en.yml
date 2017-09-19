@@ -23,6 +23,7 @@ en:
   ended_at: "Ending date"
   empty_records: "No records found"
   events: "Events"
+  event_created: "Event created"
   hello: "Hello %{name}."
   logout: "Log out"
   name: "Name"

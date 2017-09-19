@@ -1,0 +1,10 @@
+<%= form_for(@event) do |f| %>
+  <%= render 'util/error_messages', model: @event %>
+
+  <div class="form-group">
+    <%= f.label :name, 'Name*' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name', required: true, autofocus: true %>
+  </div>
+
+  <%= f.submit @event.new_record? ? 'Create' : 'Update', class: 'btn btn-primary' %>
+<% end %>

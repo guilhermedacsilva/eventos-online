@@ -3,45 +3,45 @@ class EventsController < ApplicationController
     @events = Event.order(:name)
   end
 
-  # def new
-  #   @product = Event.new
-  # end
+  def new
+    @event = Event.new
+  end
 
-  # def create
-  #   @product = Event.new(product_params)
-  #   if @product.save
-  #     redirect_to edit_product_path(@product), notice: 'Event created'
-  #   else
-  #     render :new
-  #   end
-  # end
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to @event, notice: I18n.t('event_created')
+    else
+      render :new
+    end
+  end
 
-  # def show
-  #   redirect_to edit_product_path(params[:id])
-  # end
+  def show
+    @event = Event.find(params[:id])
+  end
 
   # def edit
-  #   @product = Event.find(params[:id])
+  #   @event = Event.find(params[:id])
   # end
 
   # def update
-  #   @product = Event.find(params[:id])
-  #   if @product.update(product_params)
-  #     redirect_to edit_product_path(@product), notice: 'Event updated'
+  #   @event = Event.find(params[:id])
+  #   if @event.update(event_params)
+  #     redirect_to edit_event_path(@event), notice: 'Event updated'
   #   else
   #     render :edit
   #   end
   # end
 
   # def destroy
-  #   product = Event.find(params[:id])
-  #   product.destroy
+  #   event = Event.find(params[:id])
+  #   event.destroy
   #   redirect_to events_path, notice: 'Event deleted'
   # end
 
   # private
 
-  # def product_params
-  #   params.require(:product).permit(:name, :video, :title, :subtitle)
-  # end
+  def event_params
+    params.require(:event).permit(:name)
+  end
 end

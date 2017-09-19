@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#app_root'
   get 'managers', to: 'managers#index'
-  resources 'events'
+  resources 'events' do
+    resources 'activities'
+  end
 end
