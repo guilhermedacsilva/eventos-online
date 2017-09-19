@@ -1,0 +1,6 @@
+<h1 class="page-header">
+  <%= t('event') %>: <%= @event.name %>
+  <%= render 'util/btn/index', url: event_path(@event), text: t('back_to', name: t('event')) %>
+</h1>
+
+<%= render 'form' %>

@@ -18,6 +18,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @activities = @event.activities.order(:name)
   end
 
   # def edit
