@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(version: 20170919001719) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name",         null: false
     t.integer  "workload"
+    t.integer  "people_limit"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["event_id"], name: "index_activities_on_event_id", using: :btree
   end
 
