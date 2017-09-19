@@ -44,6 +44,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name)
+    params.require(:activity).permit(:name, :workload)
   end
 end

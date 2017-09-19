@@ -33,3 +33,5 @@ en:
   success: 'Success'
   title: 'Simple Event Manager'
   update: 'Update'
+  workload: 'Workload'
+  workload_desc: 'Workload (hours)'
