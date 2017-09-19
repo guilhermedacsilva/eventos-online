@@ -11,5 +11,10 @@
     <%= f.text_field :workload, class: 'form-control', placeholder: t('workload') %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :people_limit, t('people_limit') %>
+    <%= f.text_field :people_limit, class: 'form-control', placeholder: t('people_limit') %>
+  </div>
+
   <%= f.submit @activity.new_record? ? t('create') : t('update'), class: 'btn btn-primary' %>
 <% end %>

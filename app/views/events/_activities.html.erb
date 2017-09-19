@@ -8,6 +8,7 @@
       <th class="col-2-btns"></th>
       <th><%= t('name') %></th>
       <th><%= t('workload_desc') %></th>
+      <th><%= t('people_quantity') %></th>
     </tr>
   </thead>
   <tbody>
@@ -19,11 +20,12 @@
       <% @activities.each do |activity| %>
         <tr>
           <td>
-            <%= render 'util/btn/edit', url: edit_event_activity_path(@event, activity) %>
-            <%= render 'util/btn/destroy', record: [@event, activity] %>
+            <%= render 'util/btn/xs/edit', url: edit_event_activity_path(@event, activity) %>
+            <%= render 'util/btn/xs/destroy', record: [@event, activity] %>
           </td>
           <td><%= activity.name %></td>
           <td><%= activity.workload %></td>
+          <td><%= "? / #{activity.people_limit}" %></td>
         </tr>
       <% end %>
     <% end %>

@@ -43,6 +43,8 @@
 .margin-bottom-sm { margin-bottom: 15px; }
 .margin-bottom-xs { margin-bottom: 5px; }
 
+.margin-left-xs { margin-left: 5px; }
+
 .margin-right-sm { margin-right: 15px; }
 
 .margin-top-sm { margin-top: 15px; }
@@ -126,44 +128,4 @@
 
 .field_with_errors label {
     color: #900;
-}
-
-img.loading {
-    width: 150px;
-}
-
-.modal {
-    background: rgba( 255, 255, 255, .85 );
-    display:    none;
-    position:   fixed;
-    z-index:    1000;
-    top:        0;
-    left:       0;
-    height:     100%;
-    width:      100%;
-    text-align: center;
-    padding-top: 200px;
-}
-
-.modal img {
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-body.loading {
-    overflow: hidden;
-}
-
-body.loading .modal {
-    display: block;
 }

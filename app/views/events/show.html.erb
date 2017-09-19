@@ -1,6 +1,7 @@
 <h1 class="page-header">
   <%= t('event') %>: <%= @event.name %>
   <%= render 'util/btn/index', url: events_path %>
+  <%= render 'util/btn/edit', url: edit_event_path(@event) %>
 </h1>
 
 <%= render 'activities' %>

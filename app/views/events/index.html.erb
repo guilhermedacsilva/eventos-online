@@ -21,14 +21,12 @@
       <% @events.each do |event| %>
         <tr>
           <td>
-            <%= render 'util/btn/show', url: event_path(event) %>
+            <%= render 'util/btn/xs/show', url: event_path(event) %>
+            <%= render 'util/btn/xs/destroy', record: event %>
           </td>
           <td><%= event.name %></td>
           <td><%= event.started_at %></td>
           <td><%= event.ended_at %></td>
-          <td>
-            <%= render 'util/btn/destroy', record: event %>
-          </td>
         </tr>
       <% end %>
     <% end %>

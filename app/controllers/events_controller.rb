@@ -21,26 +21,30 @@ class EventsController < ApplicationController
     @activities = @event.activities.order(:name)
   end
 
-  # def edit
-  #   @event = Event.find(params[:id])
-  # end
+  def edit
+    @event = Event.find(params[:id])
+  end
 
-  # def update
-  #   @event = Event.find(params[:id])
-  #   if @event.update(event_params)
-  #     redirect_to edit_event_path(@event), notice: 'Event updated'
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to @event, notice: t('success')
+    else
+      render :edit
+    end
+  end
 
-  # def destroy
-  #   event = Event.find(params[:id])
-  #   event.destroy
-  #   redirect_to events_path, notice: 'Event deleted'
-  # end
+  def destroy
+    event = Event.find(params[:id])
+    if event.activities.count > 0
+      redirect_to events_path, flash: { error: t('event_cannot_delete') }
+    else
+      event.destroy
+      redirect_to events_path, notice: t('success')
+    end
+  end
 
-  # private
+  private
 
   def event_params
     params.require(:event).permit(:name)

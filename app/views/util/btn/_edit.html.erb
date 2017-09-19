@@ -1,3 +1,4 @@
-<a href="<%= url %>" class="btn btn-xs btn-default" title="Edit">
+<a href="<%= url %>" class="btn btn-default pull-right margin-left-xs">
   <span class="glyphicon glyphicon-pencil"></span>
+  <%= local_assigns[:text] ? text : t('edit') %>
 </a>

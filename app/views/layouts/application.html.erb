@@ -8,7 +8,5 @@
   </head>
   <body>
     <%= content_for?(:body) ? yield(:body) : yield %>
-
-    <div class="modal"><%= image_tag '/images/loading.png' %></div>
   </body>
 </html>
