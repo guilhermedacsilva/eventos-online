@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170919001719) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name",       null: false
+    t.integer  "workload"
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

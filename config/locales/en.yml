@@ -20,19 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  activity_created: 'Activity created'
-  activity_deleted: 'Activity deleted'
   back_to: 'Back to %{name}'
   create: 'Create'
   ended_at: 'Ending date'
   empty_records: 'No records found'
   event: 'Event'
   events: 'Events'
-  event_created: 'Event created'
-  event_deleted: 'Event deleted'
   hello: 'Hello %{name}.'
   logout: 'Log out'
   name: 'Name'
   started_at: 'Starting date'
+  success: 'Success'
   title: 'Simple Event Manager'
   update: 'Update'

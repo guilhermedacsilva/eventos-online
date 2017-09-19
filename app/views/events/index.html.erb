@@ -21,7 +21,7 @@
       <% @events.each do |event| %>
         <tr>
           <td>
-            <%= render 'util/btn/edit', url: edit_event_path(event) %>
+            <%= render 'util/btn/show', url: event_path(event) %>
           </td>
           <td><%= event.name %></td>
           <td><%= event.started_at %></td>
