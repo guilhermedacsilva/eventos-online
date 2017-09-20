@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum access_level: {
-    organizer: 0,
+    coordinator: 0,
     admin: 1
   }
 end

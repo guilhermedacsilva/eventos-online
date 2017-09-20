@@ -5,12 +5,16 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def after_sign_out_path_for(_resource_or_scope)
-    new_user_session_path
-  end
-
   def resolve_layout
     user_signed_in? ? 'signed_in' : 'application'
+  end
+
+  def enable_user!
+    redirect_to root_path if user_signed_in? && !current_user.enabled?
+  end
+
+  def after_sign_out_path_for(_resource_or_scope)
+    new_user_session_path
   end
 
   def only_admin!

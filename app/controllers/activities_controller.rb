@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_action :enable_user!
   before_action :set_event
 
   def index

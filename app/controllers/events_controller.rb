@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :enable_user!
+
   def index
     @events = Event.order(:name)
   end

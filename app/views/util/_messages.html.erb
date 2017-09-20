@@ -1,5 +1,11 @@
-<% css_hash = {notice: 'success', info: 'info', warning: 'warning', error: 'danger'} %>
-<% [:notice, :info, :warning, :error].each do |type| %>
+<% css_hash = {
+  notice: 'success',
+  info: 'info',
+  warning: 'warning',
+  alert: 'danger',
+  error: 'danger'
+} %>
+<% [:notice, :info, :warning, :error, :alert].each do |type| %>
   <% if flash[type] && !flash[type].empty? %>
     <div class="alert alert-<%= css_hash[type] %>">
       <ul class="padding-left-md">

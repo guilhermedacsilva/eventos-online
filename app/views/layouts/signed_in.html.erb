@@ -12,7 +12,9 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t('events'), events_path %></li>
+        <% if current_user.enabled %>
+          <li><%= link_to t('events'), events_path %></li>
+        <% end %>
         <li><%= link_to t('logout'), destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>

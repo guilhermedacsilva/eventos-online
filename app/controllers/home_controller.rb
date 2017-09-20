@@ -3,11 +3,7 @@ class HomeController < ApplicationController
 
   def app_root
     if user_signed_in?
-      if current_user.admin?
-        redirect_to manager_path
-      else
-        render plain: 'Not implemented', status: 404
-      end
+      redirect_to coordinator_path
     else
       redirect_to new_user_session_path
     end

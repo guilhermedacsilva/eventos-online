@@ -1,0 +1,11 @@
+<% unless current_user.enabled? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <ul class="padding-left-md">
+        <%= t('talk_to_admin_to_enable_access') %>
+        (<%= @admin.email %>)
+      </ul>
+    </div>
+  </div>
+<% end %>
+<h1><%= t('hello', name: current_user.email) %></h1>
