@@ -1,11 +1,34 @@
-<% unless current_user.enabled? %>
-  <div id="error_explanation">
-    <div class="alert alert-danger">
-      <ul class="padding-left-md">
-        <%= t('talk_to_admin_to_enable_access') %>
-        (<%= @admin.email %>)
-      </ul>
-    </div>
-  </div>
-<% end %>
-<h1><%= t('hello', name: current_user.email) %></h1>
+<h1 class="page-header">
+  <%= t('coordinators') %>
+  <%= render 'util/btn/new', text: t('coordinator'), url: new_coordinator_path %>
+</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th class="col-3-btns"></th>
+      <th><%= t('email') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @coordinators.empty? %>
+      <tr class="text-center">
+        <td colspan="99"><%= t('empty_records') %></td>
+      </tr>
+    <% else %>
+      <% @coordinators.each do |coordinator| %>
+        <tr class="<%= coordinator.enabled? ? 'success' : 'danger' %>">
+          <td>
+            <% icon = coordinator.enabled? ? 'remove' : 'ok' %>
+            <%= render 'util/btn/xs/edit', url: edit_coordinator_path(coordinator) %>
+            <% unless coordinator.admin? %>
+              <%= render 'util/btn/simple', http_method: :patch, css_class: 'btn-xs btn-primary', title: t('enable_disable'), icon: icon, url: enable_coordinator_path(coordinator) %>
+              <%= render 'util/btn/xs/destroy', record: coordinator_path(coordinator) %>
+            <% end %>
+          </td>
+          <td><%= coordinator.email %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

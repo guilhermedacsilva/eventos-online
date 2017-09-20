@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   }
 
   root 'home#app_root'
-  get 'coordinator', to: 'coordinators#index'
-  resources 'users'
-  patch 'users/:id/enable', to: 'users#enable', as: 'enable_user'
+  resources 'coordinators'
+  patch 'coordinators/:id/enable', to: 'coordinators#enable', as: 'enable_coordinator'
   resources 'events' do
     resources 'activities'
   end

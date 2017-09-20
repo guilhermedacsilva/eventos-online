@@ -22,6 +22,8 @@
 en:
   back_to: 'Back to %{name}'
   back_to_sign_in: 'Back to Sign in'
+  coordinator: 'Coordinator'
+  coordinators: 'Coordinators'
   create: 'Create'
   delete: 'Delete'
   delete_are_you_sure: 'Are you sure you want to DELETE it?'
@@ -41,6 +43,7 @@ en:
   password: 'Password'
   password_confirmation: 'Password confirmation'
   password_minimum: 'Password (%{quantity} characters minimum)'
+  password_leave_blank: 'Leave the password blank to not to change it.'
   people_limit: 'People limit'
   people_quantity: 'People quantity / limit'
   remember_me: 'Remember me'
@@ -53,6 +56,5 @@ en:
   talk_to_admin_to_enable_access: 'Please, talk to the admin to enable your access.'
   title: 'Simple Event Manager'
   update: 'Update'
-  users: 'Users'
   workload: 'Workload'
   workload_desc: 'Workload (hours)'

@@ -1,0 +1,31 @@
+<% form_url = @coordinator.new_record? ? coordinators_path : coordinator_path(@coordinator) %>
+<%= form_for(@coordinator, url: form_url) do |f| %>
+  <%= render 'util/error_messages', model: @coordinator %>
+
+  <div class="form-group">
+    <%= f.label :email, t('email')+'*' %>
+    <%= f.text_field :email, class: 'form-control', placeholder: t('email'), required: true, autofocus: true %>
+  </div>
+
+  <% unless @coordinator.new_record? %>
+    <div class="form-group">
+      <em><%= t('password_leave_blank') %></em>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <% if User.password_length.min %>
+      <%= f.label :password, t('password_minimum', quantity: User.password_length.min) %>
+    <% else %>
+      <%= f.label :password, t('password') %>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, t('password_confirmation') %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <%= f.submit @coordinator.new_record? ? t('create') : t('update'), class: 'btn btn-primary' %>
+<% end %>
