@@ -1,7 +1,7 @@
 <% if model.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      <ul class="padding-left-md">
+      <ul>
         <% model.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>

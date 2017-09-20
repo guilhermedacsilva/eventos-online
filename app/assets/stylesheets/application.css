@@ -129,3 +129,10 @@
 .field_with_errors label {
     color: #900;
 }
+
+.alert ul {
+    padding: 0;
+}
+.alert li {
+    display: block;
+}

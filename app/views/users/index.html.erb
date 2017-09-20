@@ -1,0 +1,34 @@
+<h1 class="page-header">
+  <%= t('users') %>
+  <%= render 'util/btn/new', text: t('user'), url: new_user_path %>
+</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th class="col-3-btns"></th>
+      <th><%= t('email') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @users.empty? %>
+      <tr class="text-center">
+        <td colspan="99"><%= t('empty_records') %></td>
+      </tr>
+    <% else %>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <% icon = user.enabled? ? 'remove' : 'ok' %>
+            <%= render 'util/btn/xs/edit', url: edit_user_path(user) %>
+            <% unless user.admin? %>
+              <%= render 'util/btn/simple', http_method: :patch, css_class: 'btn-xs btn-primary', title: t('enable_disable'), icon: icon, url: enable_user_path(user) %>
+              <%= render 'util/btn/xs/destroy', record: user %>
+            <% end %>
+          </td>
+          <td><%= user.email %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

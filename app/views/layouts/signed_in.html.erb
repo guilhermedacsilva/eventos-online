@@ -12,6 +12,9 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user.admin? %>
+          <li><%= link_to t('users'), users_path %></li>
+        <% end %>
         <% if current_user.enabled %>
           <li><%= link_to t('events'), events_path %></li>
         <% end %>
