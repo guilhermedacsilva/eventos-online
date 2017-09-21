@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'students/new'
+
+  get 'students/create'
+
   # ----------------------
   devise_for :users, controllers: {
     sessions: 'custom_devise/sessions',
@@ -10,5 +14,6 @@ Rails.application.routes.draw do
   patch 'coordinators/:id/enable', to: 'coordinators#enable', as: 'enable_coordinator'
   resources 'events' do
     resources 'activities'
+    resources 'students'
   end
 end

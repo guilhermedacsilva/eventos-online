@@ -1,0 +1,31 @@
+<h3>
+  <%= t('students') %>
+  <%= render 'util/btn/simple', text: t('student_register'), css_class: 'btn-primary btn-xs pull-right', url: new_event_student_path(@event), icon: 'plus' %>
+</h3>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th class="col-2-btns"></th>
+      <th><%= t('name') %></th>
+      <th><%= t('email') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @students.empty? %>
+      <tr class="text-center">
+        <td colspan="99"><%= t('empty_records') %></td>
+      </tr>
+    <% else %>
+      <% @students.each do |student| %>
+        <tr>
+          <td>
+            <%= render 'util/btn/xs/edit', url: edit_event_student_path(@event, student) %>
+            <%= render 'util/btn/xs/destroy', record: [@event, student] %>
+          </td>
+          <td><%= student.name %></td>
+          <td><%= student.email %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

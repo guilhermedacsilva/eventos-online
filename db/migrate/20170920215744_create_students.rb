@@ -6,7 +6,7 @@ class CreateStudents < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    create_table :presence do |t|
+    create_table :presences do |t|
       t.references :student, foreign_key: true, null: false
       t.references :activity, foreign_key: true, null: false
       t.boolean :present, default: false, null: false

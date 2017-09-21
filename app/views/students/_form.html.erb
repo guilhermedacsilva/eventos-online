@@ -1,0 +1,24 @@
+<%= form_for([@event, @student]) do |f| %>
+  <%= render 'util/error_messages', model: @student %>
+
+  <div class="form-group">
+    <%= f.label :name, t('name')+'*' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: t('name'), required: true, autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, t('email')+'*' %>
+    <%= f.text_field :email, class: 'form-control', placeholder: t('email'), required: true %>
+  </div>
+
+  <div class="form-group clearfix">
+    <%= f.label :activities, t('activities') %>
+    <% @activities.each do |activity| %>
+      <div>
+        <label><%= check_box_tag 'student[activity_ids][]', activity.id, @studentActivities.include?(activity) %> <%= activity.name %></label>
+      </div>
+    <% end %>
+  </div>
+
+  <%= f.submit @student.new_record? ? t('create') : t('update'), class: 'btn btn-primary' %>
+<% end %>

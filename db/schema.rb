@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20170920215744) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "presence", force: :cascade do |t|
+  create_table "presences", force: :cascade do |t|
     t.integer "student_id",                  null: false
     t.integer "activity_id",                 null: false
     t.boolean "present",     default: false, null: false
-    t.index ["activity_id"], name: "index_presence_on_activity_id", using: :btree
-    t.index ["student_id"], name: "index_presence_on_student_id", using: :btree
+    t.index ["activity_id"], name: "index_presences_on_activity_id", using: :btree
+    t.index ["student_id"], name: "index_presences_on_student_id", using: :btree
   end
 
   create_table "students", force: :cascade do |t|
@@ -68,6 +68,6 @@ ActiveRecord::Schema.define(version: 20170920215744) do
   end
 
   add_foreign_key "activities", "events"
-  add_foreign_key "presence", "activities"
-  add_foreign_key "presence", "students"
+  add_foreign_key "presences", "activities"
+  add_foreign_key "presences", "students"
 end
