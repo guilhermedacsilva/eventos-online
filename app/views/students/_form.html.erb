@@ -15,7 +15,7 @@
     <%= f.label :activities, t('activities') %>
     <% @activities.each do |activity| %>
       <div>
-        <label><%= check_box_tag 'student[activity_ids][]', activity.id, @studentActivities.include?(activity) %> <%= activity.name %></label>
+        <label><%= check_box_tag 'student[activity_ids][]', activity.id, @student_activities.include?(activity) %> <%= activity.name %></label>
       </div>
     <% end %>
   </div>

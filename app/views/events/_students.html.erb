@@ -20,7 +20,7 @@
         <tr>
           <td>
             <%= render 'util/btn/xs/edit', url: edit_event_student_path(@event, student) %>
-            <%= render 'util/btn/xs/destroy', record: [@event, student] %>
+            <%= render 'util/btn/simple', url: remove_student_from_event_path(@event, student), http_method: :patch, css_class: 'btn-xs btn-danger', title: t('student_remove_from_event'), icon: 'remove' %>
           </td>
           <td><%= student.name %></td>
           <td><%= student.email %></td>

@@ -9,5 +9,6 @@ class Event < ApplicationRecord
       .joins(activities: { presences: :student })
       .where(id: id)
       .order('students.name')
+      .distinct
   end
 end

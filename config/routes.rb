@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'students/new'
-
-  get 'students/create'
-
   # ----------------------
   devise_for :users, controllers: {
     sessions: 'custom_devise/sessions',
@@ -16,4 +12,5 @@ Rails.application.routes.draw do
     resources 'activities'
     resources 'students'
   end
+  patch 'event/:event_id/student/:id/remove', to: 'students#remove_from_event', as: 'remove_student_from_event'
 end
